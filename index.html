@@ -25,7 +25,9 @@ h1 span{color:var(--gold);font-style:italic}
 .door .num{font:12px Arial,sans-serif;letter-spacing:.18em;color:var(--gold)}
 .door .symbol{font-size:28px;line-height:1}
 .door .hint{font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#d8e2d9}
-.door.opened{background:linear-gradient(145deg,#754343,#512e32);border-color:#d9a3a0}\n.door.locked{opacity:.48;cursor:not-allowed;filter:saturate(.55);box-shadow:none}\n.door.locked:hover{transform:none;background:linear-gradient(145deg,#285344,#1b4036);border-color:#d8b87575}
+.door.opened{background:linear-gradient(145deg,#754343,#512e32);border-color:#d9a3a0}
+.door.locked{opacity:.48;cursor:not-allowed;filter:saturate(.55);box-shadow:none}
+.door.locked:hover{transform:none;background:linear-gradient(145deg,#285344,#1b4036);border-color:#d8b87575}
 .door.opened .num{color:#f0c8a0}
 .door.opened .hint{color:#f4d9d1}
 .door.opened:after{content:"✓";position:absolute;top:12px;right:14px;color:#f0c8a0;font:14px Arial}
@@ -101,7 +103,7 @@ const surprises = [
 
  ["❤️","A Little More Love","One more love coupon to add to your collection. Save it for a special moment!","My love for you has no expiry date."],
 
- ["🧩","A Little Preparation","Something to help preserve all the pieces of a little surprise coming tomorrow!","Patience... something fun is coming!" ],
+ ["🧩","A Little Preparation","A little something to keep all the pieces together once you complete tomorrow's puzzle!","A little patience... tomorrow brings a puzzle surprise." ],
 
  ["🖤","A Villainous Surprise","Time to unleash your dark side! Your Disney Villains puzzle is here. Let's put it together!","The perfect excuse for some quality time together."],
 
@@ -125,7 +127,13 @@ const icons=["🎄","❄️","⭐","🎁","🦌","🍬","🧦","🔔","🕯️",
 const opened = new Set(JSON.parse(localStorage.getItem("christmasOpened")||"[]"));
 let activeDay=0;
 const calendar=document.getElementById("calendar");
+
+// PREVIEW MODE: true unlocks all 24 days for testing.
+// Set to false before sharing the calendar.
+const PREVIEW_MODE = true;
+
 function getToday(){
+ if(PREVIEW_MODE) return 24;
  const now=new Date();
  // Use the visitor's local calendar date.
  if(now.getMonth()!==11 || now.getDate()<1 || now.getDate()>24) return 0;
@@ -135,7 +143,8 @@ function render(){
  calendar.innerHTML="";
  const today=getToday();
  surprises.forEach((item,i)=>{
-  const day=i+1, isOpen=opened.has(day), canOpen=(day===today);
+  const day=i+1, isOpen=opened.has(day);
+  const canOpen = PREVIEW_MODE ? true : (day===today);
   const b=document.createElement("button");
   b.className="door"+(isOpen?" opened":"")+(canOpen?"":" locked");
   b.disabled=!canOpen;
@@ -160,7 +169,7 @@ function close(){document.getElementById("modal").classList.remove("show")}
 document.getElementById("close").addEventListener("click",close);
 document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")close()});
 document.getElementById("markDone").addEventListener("click",()=>{
- if(activeDay!==getToday()) { close(); return; }
+ if(!PREVIEW_MODE && activeDay!==getToday()) { close(); return; }
  opened.add(activeDay);
  localStorage.setItem("christmasOpened",JSON.stringify([...opened]));
  render();close()
