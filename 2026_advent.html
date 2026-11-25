@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173b32">
+<title>24 Little Christmas Moments</title>
+<style>
+:root{--forest:#173b32;--deep:#102a25;--cream:#fff8e9;--gold:#d8b875;--red:#9d4545;--muted:#b8c9bd}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 50% 0%,#31594a 0%,var(--forest) 48%,var(--deep) 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#fff 1px,transparent 1px);background-size:83px 83px,137px 137px;background-position:0 0,35px 54px}
+.wrap{max-width:1080px;margin:auto;padding:42px 22px 60px;position:relative}
+.topline{text-align:center;text-transform:uppercase;letter-spacing:.28em;font:11px Arial,sans-serif;color:var(--gold)}
+h1{text-align:center;font-size:clamp(42px,7vw,76px);font-weight:400;line-height:.98;margin:17px 0 14px}
+h1 span{color:var(--gold);font-style:italic}
+.subtitle{text-align:center;color:#e7e0d1;font:14px/1.7 Arial,sans-serif;max-width:520px;margin:0 auto}
+.rule{width:70px;height:1px;background:var(--gold);margin:28px auto 30px}
+.progress-wrap{max-width:420px;margin:0 auto 30px;text-align:center;font:11px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.progress{height:4px;background:#ffffff25;border-radius:9px;margin-top:10px;overflow:hidden}.bar{height:100%;width:0;background:var(--gold);transition:width .3s}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;max-width:820px;margin:auto}
+.door{position:relative;min-height:145px;border:1px solid #d8b87575;border-radius:5px;background:linear-gradient(145deg,#285344,#1b4036);color:var(--cream);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:transform .2s,background .2s,border-color .2s;box-shadow:0 7px 18px #071a1570;overflow:hidden}
+.door:before{content:"";position:absolute;inset:6px;border:1px solid #d8b87530;pointer-events:none}
+.door:hover{transform:translateY(-4px);background:linear-gradient(145deg,#356650,#244b3e);border-color:var(--gold)}
+.door .num{font:12px Arial,sans-serif;letter-spacing:.18em;color:var(--gold)}
+.door .symbol{font-size:28px;line-height:1}
+.door .hint{font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#d8e2d9}
+.door.opened{background:linear-gradient(145deg,#754343,#512e32);border-color:#d9a3a0}\n.door.locked{opacity:.48;cursor:not-allowed;filter:saturate(.55);box-shadow:none}\n.door.locked:hover{transform:none;background:linear-gradient(145deg,#285344,#1b4036);border-color:#d8b87575}
+.door.opened .num{color:#f0c8a0}
+.door.opened .hint{color:#f4d9d1}
+.door.opened:after{content:"✓";position:absolute;top:12px;right:14px;color:#f0c8a0;font:14px Arial}
+footer{text-align:center;margin-top:34px;color:#c4d1c8;font:12px/1.8 Arial,sans-serif}
+footer strong{color:var(--gold);font-weight:normal}
+.modal{position:fixed;inset:0;background:#071a15d9;display:none;align-items:center;justify-content:center;padding:20px;z-index:5}
+.modal.show{display:flex}
+.card{width:min(470px,100%);background:var(--cream);color:#263b31;padding:38px 32px 32px;text-align:center;position:relative;border:1px solid var(--gold);box-shadow:0 20px 70px #0008}
+.card:before{content:"";position:absolute;inset:8px;border:1px solid #c9b17b;pointer-events:none}
+.close{position:absolute;right:18px;top:14px;border:0;background:none;font-size:24px;color:#52675b;cursor:pointer}
+.eyebrow{font:10px Arial,sans-serif;letter-spacing:.23em;text-transform:uppercase;color:#9a7440}
+.card .big{font-size:42px;margin:18px 0 12px}
+.card h2{font-size:31px;font-weight:400;margin:0 0 13px}
+.card p{font:15px/1.75 Arial,sans-serif;color:#536257;margin:0 auto 20px;max-width:340px}
+.love-note{font-style:italic;color:#9a7440!important;font-family:Georgia,serif!important}
+.done{border:1px solid #9a7440;color:#755b35;background:transparent;padding:11px 20px;cursor:pointer;font:10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.done:hover{background:#f0e7d5}
+.edit{display:block;margin:20px auto 0;background:none;border:0;color:#b8c9bd;text-decoration:underline;text-underline-offset:4px;cursor:pointer;font:11px Arial,sans-serif}
+.snow{color:#e9e2d4}
+@media(max-width:650px){.wrap{padding:32px 14px 40px}.grid{grid-template-columns:repeat(3,1fr);gap:9px}.door{min-height:120px}.door .symbol{font-size:24px}.card{padding:34px 24px 28px}}
+@media(max-width:380px){.grid{gap:7px}.door{min-height:108px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="topline">A little Christmas magic, made for you</div>
+  <h1>24 Little <span>Moments</span></h1>
+  <p class="subtitle">Because you mean the world to me..<br>I made this little gift for you</p>
+  <div class="rule"></div>
+  <div class="progress-wrap"><span id="progressText">0 of 24 moments discovered</span><div class="progress"><div class="bar" id="bar"></div></div></div>
+  <section class="grid" id="calendar" aria-label="Christmas advent calendar"></section>
+  <footer>Made with <span class="snow">♥</span> just for you<br><strong>December 1 — 24</strong></footer>
+  <button class="edit" id="reset">Reset calendar</button>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="card">
+  <button class="close" id="close" aria-label="Close">×</button>
+  <div class="eyebrow" id="dayLabel">A little surprise for you</div>
+  <div class="big" id="modalIcon">🎄</div>
+  <h2 id="modalTitle">A moment for us</h2>
+  <p id="modalText"></p>
+  <p class="love-note" id="modalNote"></p>
+  <button class="done" id="markDone">Keep this moment</button>
+ </div>
+</div>
+<script>
+const surprises = [
+ ["☕","Slow morning","Today, breakfast is on me. Stay cosy, take your time, and let the day begin slowly.","My favourite mornings are the ones that start with you."],
+ ["💌","A little love note","You make ordinary days feel special. Thank you for being my favourite person.","I would still choose you, in every lifetime."],
+ ["🍫","Sweet treat","A little chocolate break is waiting for you. No sharing required… unless you want to.","A sweet treat for my sweetest person."],
+ ["🎬","Christmas movie night","Tonight: blankets, snacks, a Christmas film, and absolutely no responsibilities.","The best seat in the house is next to you."],
+ ["🌹","Just because","You deserve flowers on ordinary days, too. Here is a little reminder.","You make my world brighter."],
+ ["🧖","Relax & recharge","Tonight is your evening to unwind. I'll take care of the little things.","You deserve softness, rest, and all the pampering."],
+ ["🍪","Bake together","Let's make (and taste!) something festive together. Messy kitchen encouraged.","Making memories with you is my favourite recipe."],
+ ["🎵","Our soundtrack","Pick our songs for tonight. We'll have a little living-room dance.","Every love story needs a soundtrack. This is ours."],
+ ["🕯️","Cosy evening","Candles, a warm drink, and a quiet evening together. That's the whole plan.","Home is wherever I am with you."],
+ ["🎁","A tiny gift","A little something chosen just for you. I hope it makes you smile.","You are my favourite gift."],
+ ["🥐","Breakfast date","Let's go for breakfast together. Your choice, my treat.","More dates, more laughs, more us."],
+ ["📸","Memory lane","Let's look through our photos and choose our favourite memory from this year.","I love the life we're making together."],
+ ["🧸","Comfy day","Today has one dress code: your comfiest clothes. I'll bring the cuddles.","You never have to be anything but yourself with me."],
+ ["🍝","Dinner date","Tonight we're having a date night. Get ready for good food and even better company.","Still crushing on you."],
+ ["💆","Pamper time","A shoulder massage and some uninterrupted me-time are on the schedule.","Let me look after you today."],
+ ["🎄","Festive outing","Let's go see the Christmas lights and soak up a little festive magic.","Every place is more magical with you."],
+ ["📖","A wish for you","Write down one thing you want to do next year. I'll help make it happen.","Your dreams matter to me."],
+ ["🧁","Surprise dessert","Your favourite dessert is on the agenda. Consider this your official sweet-tooth permission slip.","Life is sweeter with you in it."],
+ ["🎮","Your choice","You choose tonight's activity. Game, film, walk, food — I'm in.","Whatever we do, I just want to do it with you."],
+ ["💗","24 reasons — part 1","I love your smile, your kindness, your laugh, your courage, and the way you make me feel at home.","And that's only the beginning."],
+ ["🛍️","A little treat","Today, choose a small thing you've been wanting. It's on me.","You deserve nice things, especially when you least expect them."],
+ ["✨","Make a new tradition","Let's choose one little Christmas tradition that we'll repeat every year.","I can't wait for all the Christmases still to come."],
+ ["🥂","Our Christmas toast","Let's make a toast to us, to everything we've overcome, and to all the lovely things ahead.","My favourite chapter is the one we're writing together."],
+ ["❤️","The biggest gift","Merry Christmas, my love. The best part of every day, every season, and every year is sharing it with you.","I love you. Today, tomorrow, and all the days after."]
+];
+const icons=["🎄","❄️","⭐","🎁","🦌","🍬","🧦","🔔","🕯️","🍭","🌟","🎀","☃️","🍪","❤️","✨","🧤","🍫","🎅","🌲","💝","🥰","🥂","🎄"];
+const opened = new Set(JSON.parse(localStorage.getItem("christmasOpened")||"[]"));
+let activeDay=0;
+const calendar=document.getElementById("calendar");
+function getToday(){
+ const now=new Date();
+ // Use the visitor's local calendar date.
+ if(now.getMonth()!==11 || now.getDate()<1 || now.getDate()>24) return 0;
+ return now.getDate();
+}
+function render(){
+ calendar.innerHTML="";
+ const today=getToday();
+ surprises.forEach((item,i)=>{
+  const day=i+1, isOpen=opened.has(day), canOpen=(day===today);
+  const b=document.createElement("button");
+  b.className="door"+(isOpen?" opened":"")+(canOpen?"":" locked");
+  b.disabled=!canOpen;
+  b.innerHTML=`<span class="num">DAY ${String(day).padStart(2,"0")}</span><span class="symbol">${isOpen?item[0]:(canOpen?icons[i]:"🔒")}</span><span class="hint">${isOpen?"Revisit":(canOpen?"Open today's gift":"Come back on day "+day)}</span>`;
+  b.setAttribute("aria-label",`Day ${day}${canOpen?", open today's surprise":", locked until December "+day}`);
+  if(canOpen) b.addEventListener("click",()=>openDay(day));
+  calendar.appendChild(b);
+ });
+ document.getElementById("progressText").textContent=`${opened.size} of 24 moments discovered`;
+ document.getElementById("bar").style.width=(opened.size/24*100)+"%";
+}
+function openDay(day){
+ activeDay=day;const item=surprises[day-1];
+ document.getElementById("dayLabel").textContent=`December ${day} · Your little surprise`;
+ document.getElementById("modalIcon").textContent=item[0];
+ document.getElementById("modalTitle").textContent=item[1];
+ document.getElementById("modalText").textContent=item[2];
+ document.getElementById("modalNote").textContent=item[3];
+ document.getElementById("modal").classList.add("show");
+}
+function close(){document.getElementById("modal").classList.remove("show")}
+document.getElementById("close").addEventListener("click",close);
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")close()});
+document.getElementById("markDone").addEventListener("click",()=>{
+ if(activeDay!==getToday()) { close(); return; }
+ opened.add(activeDay);
+ localStorage.setItem("christmasOpened",JSON.stringify([...opened]));
+ render();close()
+});
+document.getElementById("reset").addEventListener("click",()=>{if(confirm("Start the advent calendar again? This will clear the opened days on this device.")){opened.clear();localStorage.removeItem("christmasOpened");render()}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+render();
+</script>
+</body>
+</html>
