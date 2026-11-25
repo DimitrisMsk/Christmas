@@ -128,9 +128,7 @@ const opened = new Set(JSON.parse(localStorage.getItem("christmasOpened")||"[]")
 let activeDay=0;
 const calendar=document.getElementById("calendar");
 
-// PREVIEW MODE: true unlocks all 24 days for testing.
-// Set to false before sharing the calendar.
-const PREVIEW_MODE = true;
+const PREVIEW_MODE = false;
 
 function getToday(){
  if(PREVIEW_MODE) return 24;
