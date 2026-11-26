@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,176 +6,1209 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#173b32">
 <title>24 Little Christmas Moments</title>
+
 <style>
-:root{--forest:#173b32;--deep:#102a25;--cream:#fff8e9;--gold:#d8b875;--red:#9d4545;--muted:#b8c9bd}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 50% 0%,#31594a 0%,var(--forest) 48%,var(--deep) 100%);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#fff 1px,transparent 1px);background-size:83px 83px,137px 137px;background-position:0 0,35px 54px}
-.wrap{max-width:1080px;margin:auto;padding:42px 22px 60px;position:relative}
-.topline{text-align:center;text-transform:uppercase;letter-spacing:.28em;font:11px Arial,sans-serif;color:var(--gold)}
-h1{text-align:center;font-size:clamp(42px,7vw,76px);font-weight:400;line-height:.98;margin:17px 0 14px}
-h1 span{color:var(--gold);font-style:italic}
-.subtitle{text-align:center;color:#e7e0d1;font:14px/1.7 Arial,sans-serif;max-width:520px;margin:0 auto}
-.rule{width:70px;height:1px;background:var(--gold);margin:28px auto 30px}
-.progress-wrap{max-width:420px;margin:0 auto 30px;text-align:center;font:11px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.progress{height:4px;background:#ffffff25;border-radius:9px;margin-top:10px;overflow:hidden}.bar{height:100%;width:0;background:var(--gold);transition:width .3s}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;max-width:820px;margin:auto}
-.door{position:relative;min-height:145px;border:1px solid #d8b87575;border-radius:5px;background:linear-gradient(145deg,#285344,#1b4036);color:var(--cream);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:transform .2s,background .2s,border-color .2s;box-shadow:0 7px 18px #071a1570;overflow:hidden}
-.door:before{content:"";position:absolute;inset:6px;border:1px solid #d8b87530;pointer-events:none}
-.door:hover{transform:translateY(-4px);background:linear-gradient(145deg,#356650,#244b3e);border-color:var(--gold)}
-.door .num{font:12px Arial,sans-serif;letter-spacing:.18em;color:var(--gold)}
-.door .symbol{font-size:28px;line-height:1}
-.door .hint{font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#d8e2d9}
-.door.opened{background:linear-gradient(145deg,#754343,#512e32);border-color:#d9a3a0}
-.door.locked{opacity:.48;cursor:not-allowed;filter:saturate(.55);box-shadow:none}
-.door.locked:hover{transform:none;background:linear-gradient(145deg,#285344,#1b4036);border-color:#d8b87575}
-.door.opened .num{color:#f0c8a0}
-.door.opened .hint{color:#f4d9d1}
-.door.opened:after{content:"✓";position:absolute;top:12px;right:14px;color:#f0c8a0;font:14px Arial}
-footer{text-align:center;margin-top:34px;color:#c4d1c8;font:12px/1.8 Arial,sans-serif}
-footer strong{color:var(--gold);font-weight:normal}
-.modal{position:fixed;inset:0;background:#071a15d9;display:none;align-items:center;justify-content:center;padding:20px;z-index:5}
-.modal.show{display:flex}
-.card{width:min(470px,100%);background:var(--cream);color:#263b31;padding:38px 32px 32px;text-align:center;position:relative;border:1px solid var(--gold);box-shadow:0 20px 70px #0008}
-.card:before{content:"";position:absolute;inset:8px;border:1px solid #c9b17b;pointer-events:none}
-.close{position:absolute;right:18px;top:14px;border:0;background:none;font-size:24px;color:#52675b;cursor:pointer}
-.eyebrow{font:10px Arial,sans-serif;letter-spacing:.23em;text-transform:uppercase;color:#9a7440}
-.card .big{font-size:42px;margin:18px 0 12px}
-.card h2{font-size:31px;font-weight:400;margin:0 0 13px}
-.card p{font:15px/1.75 Arial,sans-serif;color:#536257;margin:0 auto 20px;max-width:340px}
-.love-note{font-style:italic;color:#9a7440!important;font-family:Georgia,serif!important}
-.done{border:1px solid #9a7440;color:#755b35;background:transparent;padding:11px 20px;cursor:pointer;font:10px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase}
-.done:hover{background:#f0e7d5}
-.edit{display:block;margin:20px auto 0;background:none;border:0;color:#b8c9bd;text-decoration:underline;text-underline-offset:4px;cursor:pointer;font:11px Arial,sans-serif}
-.snow{color:#e9e2d4}
-@media(max-width:650px){.wrap{padding:32px 14px 40px}.grid{grid-template-columns:repeat(3,1fr);gap:9px}.door{min-height:120px}.door .symbol{font-size:24px}.card{padding:34px 24px 28px}}
-@media(max-width:380px){.grid{gap:7px}.door{min-height:108px}}
+:root {
+  --forest: #173b32;
+  --deep: #102a25;
+  --cream: #fff8e9;
+  --gold: #d8b875;
+  --red: #790f12;
+  --muted: #b8c9bd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cream);
+  font-family: Georgia, 'Times New Roman', serif;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #31594a 0%,
+    var(--forest) 48%,
+    var(--deep) 100%
+  );
+  overflow-x: hidden;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .25;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 83px 83px, 137px 137px;
+  background-position: 0 0, 35px 54px;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: auto;
+  padding: 42px 22px 60px;
+  position: relative;
+}
+
+.topline {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  font: 11px Arial, sans-serif;
+  color: var(--gold);
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 400;
+  line-height: .98;
+  margin: 17px 0 14px;
+}
+
+h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.subtitle {
+  text-align: center;
+  color: #e7e0d1;
+  font: 14px/1.7 Arial, sans-serif;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.rule {
+  width: 70px;
+  height: 1px;
+  background: var(--gold);
+  margin: 28px auto 30px;
+}
+
+.progress-wrap {
+  max-width: 420px;
+  margin: 0 auto 30px;
+  text-align: center;
+  font: 11px Arial, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.progress {
+  height: 4px;
+  background: #ffffff25;
+  border-radius: 9px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 0;
+  background: var(--gold);
+  transition: width .3s;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  max-width: 820px;
+  margin: auto;
+}
+
+.door {
+  position: relative;
+  min-height: 145px;
+  border: 1px solid #d8b87575;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #285344, #1b4036);
+  color: var(--cream);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform .2s, background .2s, border-color .2s;
+  box-shadow: 0 7px 18px #071a1570;
+  overflow: hidden;
+}
+
+.door:before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #d8b87530;
+  pointer-events: none;
+}
+
+.door:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, #356650, #244b3e);
+  border-color: var(--gold);
+}
+
+.door .num {
+  font: 12px Arial, sans-serif;
+  letter-spacing: .18em;
+  color: var(--gold);
+}
+
+.door .symbol {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.door .hint {
+  font: 10px Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #d8e2d9;
+}
+
+.door.opened {
+  background: linear-gradient(145deg, #754343, #512e32);
+  border-color: #d9a3a0;
+}
+
+.door.locked {
+  opacity: .48;
+  cursor: not-allowed;
+  filter: saturate(.55);
+  box-shadow: none;
+}
+
+.door.locked:hover {
+  transform: none;
+  background: linear-gradient(145deg, #285344, #1b4036);
+  border-color: #d8b87575;
+}
+
+.door.opened .num {
+  color: #f0c8a0;
+}
+
+.door.opened .hint {
+  color: #f4d9d1;
+}
+
+.door.opened:after {
+  content: "✓";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  color: #f0c8a0;
+  font: 14px Arial;
+}
+
+footer {
+  text-align: center;
+  margin-top: 34px;
+  color: #c4d1c8;
+  font: 12px/1.8 Arial, sans-serif;
+}
+
+footer strong {
+  color: var(--gold);
+  font-weight: normal;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #071a15d9;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 5;
+  overflow-y: auto;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.card {
+  width: min(470px, 100%);
+  max-height: 95vh;
+  overflow-y: auto;
+  background: var(--cream);
+  color: #263b31;
+  padding: 38px 32px 32px;
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--gold);
+  box-shadow: 0 20px 70px #0008;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #c9b17b;
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  color: #52675b;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.eyebrow {
+  font: 10px Arial, sans-serif;
+  letter-spacing: .23em;
+  text-transform: uppercase;
+  color: #9a7440;
+}
+
+.card .big {
+  font-size: 42px;
+  margin: 18px 0 12px;
+}
+
+.card h2 {
+  font-size: 31px;
+  font-weight: 400;
+  margin: 0 0 13px;
+}
+
+.card p {
+  font: 15px/1.75 Arial, sans-serif;
+  color: #536257;
+  margin: 0 auto 20px;
+  max-width: 340px;
+}
+
+.love-note {
+  font-style: italic;
+  color: #9a7440 !important;
+  font-family: Georgia, serif !important;
+}
+
+.done {
+  border: 1px solid #9a7440;
+  color: #755b35;
+  background: transparent;
+  padding: 11px 20px;
+  cursor: pointer;
+  font: 10px Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.done:hover {
+  background: #f0e7d5;
+}
+
+.edit {
+  display: block;
+  margin: 20px auto 0;
+  background: none;
+  border: 0;
+  color: #b8c9bd;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  font: 11px Arial, sans-serif;
+}
+
+.snow {
+  color: #e9e2d4;
+}
+
+/* LOVE COUPON DISPLAY */
+
+.coupon-view {
+  margin: 24px auto 20px;
+  width: 100%;
+}
+
+.coupon-ticket {
+  position: relative;
+  background: #790f12;
+  color: #fff8e9;
+  padding: 30px 24px;
+  border: 2px solid #d8b875;
+  outline: 1px solid #790f12;
+  outline-offset: 5px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.coupon-ticket:before,
+.coupon-ticket:after {
+  content: "✦";
+  position: absolute;
+  color: #f5e5d5;
+  font-size: 18px;
+}
+
+.coupon-ticket:before {
+  top: 12px;
+  left: 15px;
+}
+
+.coupon-ticket:after {
+  bottom: 12px;
+  right: 15px;
+}
+
+.coupon-label {
+  font: 10px Arial, sans-serif;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: #e6c9a4;
+  margin-bottom: 18px;
+}
+
+.coupon-ticket h3 {
+  font: bold 27px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  color: #fff8e9;
+}
+
+.coupon-ticket p {
+  font: 13px/1.7 Arial, sans-serif;
+  color: #f5e5d5;
+  margin: 0;
+  max-width: 290px;
+}
+
+.coupon-heart {
+  font-size: 23px;
+  margin-top: 15px;
+}
+
+.download-coupon {
+  margin-top: 22px;
+  width: 100%;
+  border: 1px solid #9a7440;
+  background: #790f12;
+  color: #fff8e9;
+  padding: 14px 18px;
+  cursor: pointer;
+  font: 11px Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.download-coupon:hover {
+  background: #9d2529;
+}
+
+.coupon-footer {
+  font: 10px Arial, sans-serif;
+  letter-spacing: .13em;
+  color: #9a7440;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media(max-width:650px) {
+  .wrap {
+    padding: 32px 14px 40px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+  }
+
+  .door {
+    min-height: 120px;
+  }
+
+  .door .symbol {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 34px 24px 28px;
+  }
+}
+
+@media(max-width:380px) {
+  .grid {
+    gap: 7px;
+  }
+
+  .door {
+    min-height: 108px;
+  }
+
+  .coupon-ticket h3 {
+    font-size: 23px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <main class="wrap">
-  <div class="topline">A little Christmas magic, made for you</div>
+
+  <div class="topline">
+    A little Christmas magic, made for you
+  </div>
+
   <h1>24 Little <span>Moments</span></h1>
-  <p class="subtitle">Because you mean the world to me..<br>I made this little gift for you</p>
+
+  <p class="subtitle">
+    Because you mean the world to me..<br>
+    I made this little gift for you
+  </p>
+
   <div class="rule"></div>
-  <div class="progress-wrap"><span id="progressText">0 of 24 moments discovered</span><div class="progress"><div class="bar" id="bar"></div></div></div>
-  <section class="grid" id="calendar" aria-label="Christmas advent calendar"></section>
-  <footer>Made with <span class="snow">♥</span> just for you<br><strong>December 1 — 24</strong></footer>
-  <button class="edit" id="reset">Reset calendar</button>
+
+  <div class="progress-wrap">
+    <span id="progressText">0 of 24 moments discovered</span>
+    <div class="progress">
+      <div class="bar" id="bar"></div>
+    </div>
+  </div>
+
+  <section
+    class="grid"
+    id="calendar"
+    aria-label="Christmas advent calendar">
+  </section>
+
+  <footer>
+    Made with <span class="snow">♥</span> just for you
+    <br>
+    <strong>December 1 — 24</strong>
+  </footer>
+
+  <button class="edit" id="reset">
+    Reset calendar
+  </button>
+
 </main>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="card">
-  <button class="close" id="close" aria-label="Close">×</button>
-  <div class="eyebrow" id="dayLabel">A little surprise for you</div>
-  <div class="big" id="modalIcon">🎄</div>
-  <h2 id="modalTitle">A moment for us</h2>
-  <p id="modalText"></p>
-  <p class="love-note" id="modalNote"></p>
-  <button class="done" id="markDone">Keep this moment</button>
- </div>
+
+<!-- SURPRISE MODAL -->
+
+<div
+  class="modal"
+  id="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle">
+
+  <div class="card">
+
+    <button
+      class="close"
+      id="close"
+      aria-label="Close">
+      ×
+    </button>
+
+    <div class="eyebrow" id="dayLabel">
+      A little surprise for you
+    </div>
+
+    <!-- NORMAL SURPRISE -->
+
+    <div class="big" id="modalIcon">🎄</div>
+
+    <h2 id="modalTitle">A moment for us</h2>
+
+    <p id="modalText"></p>
+
+    <p class="love-note" id="modalNote"></p>
+
+    <!-- LOVE COUPON -->
+
+    <div class="coupon-view" id="couponView" hidden>
+
+      <div class="coupon-ticket">
+
+        <div class="coupon-label">
+          A little something for you
+        </div>
+
+        <h3 id="couponTitle">Coffee Date</h3>
+
+        <p id="couponDescription"></p>
+
+        <div class="coupon-heart">♡</div>
+
+      </div>
+
+      <button
+        class="download-coupon"
+        id="downloadCoupon">
+        ↓ Download My Coupon
+      </button>
+
+      <div class="coupon-footer">
+        Valid for one special moment · No expiration date ♡
+      </div>
+
+    </div>
+
+    <button class="done" id="markDone">
+      Keep this moment
+    </button>
+
+  </div>
 </div>
+
+
 <script>
+
+/* =====================================
+   1. SURPRISES - DECEMBER 1 TO 24
+===================================== */
+
 const surprises = [
- ["🍬","A Sweet Beginning","A little treat to start your Christmas countdown. Enjoy your Haribo!","A little sweetness for my sweetest person. ❤️"],
 
- ["💎","A Little Sparkle","A little something to add some sparkle to your look. Your new ear cuff is waiting!","You make everything around you shine."],
+  ["🎁","A Sweet Beginning",
+   "The best things in life are sometimes found in little colourful packages.",
+   "A little sweetness for my sweetest person. ❤️"],
 
- ["❤️","A Love Coupon","You've just received a little love coupon! Redeem it whenever you like.","Anything to make you smile, my love."],
+  ["🎁","A Little Reset",
+   "A little reset for the person who deserves to be treated like royalty.",
+   "You deserve all the relaxation and pampering in the world."],
 
- ["🧖","Self-Care Time","A little pampering is waiting for you. Enjoy your face mask and eye patches!","You deserve all the relaxation and pampering in the world."],
+  ["🎁","A Little Wish",
+   "This little piece of paper might be worth more than you think.",
+   "Anything to make you smile, my love. ❤️"],
 
- ["🍫","Something Sweet","A Snickers break! Because every day deserves a little chocolate.","You're sweeter than chocolate. Even Snickers."],
+  ["🎁","Something Unexpected",
+   "Not everything that makes you happy needs to make sense.",
+   "Sometimes all you need is a little something cute."],
 
- ["🛏️","Beauty Sleep","Something to make your beauty sleep even better. Enjoy your new silk pillowcase!","Sweet dreams are even sweeter when I get to wake up next to you."],
+  ["🎁","A Little Energy",
+   "You're going to need a little energy to get through December.",
+   "You're sweeter than chocolate. Even Snickers."],
 
- ["📸","Our Little Memory","A picture of us! A little reminder of one of my favourite people and the memories we share.","My favourite memories are the ones with you."],
+  ["🎁","Sweet Dreams",
+   "Even your dreams deserve a touch of luxury.",
+   "Sweet dreams are even sweeter when I get to wake up next to you."],
 
- ["🌸","A Little Fragrance","A perfume atomizer to take your favourite scent wherever you go.","I hope every little thing reminds you of how much I love you."],
+  ["🎁","A Moment to Remember",
+   "A thousand words aren't always needed to remember a moment.",
+   "My favourite memories are the ones with you. ❤️"],
 
- ["🍜","Spicy Surprise","Ready for a little challenge? Buldak noodles are waiting for you!","Life with you is never boring!" ],
+  ["🎁","A Little Companion",
+   "Your favourite little detail doesn't always have to stay at home.",
+   "I hope every little thing reminds you of how much I love you."],
 
- ["💍","A Special Accessory","A beautiful ring holder necklace, so you can keep your rings close wherever you go.","A little something special for someone special."],
+  ["🎁","A Fiery Surprise",
+   "Happiness is sweet, but sometimes it comes with a little fire.",
+   "Life with you is never boring! 🌶️"],
 
- ["🧸","A Little Cuteness","A squishy little friend to make your day a little happier!","Sometimes all you need is a little something cute."],
+  ["🎁","Something Precious",
+   "Some precious things deserve a special place, even when they're not being worn.",
+   "A little something special for someone special."],
 
- ["🎄","A Christmas Surprise","Your gift will be delivered and waiting for you under the magic Christmas tree. 🎄","A little Christmas magic is on its way. ❤️"],
+  ["🎁","The Finishing Touch",
+   "Sometimes the smallest details make the biggest difference.",
+   "You deserve all the beautiful things in this world."],
 
- ["❤️","A Love Coupon","Another little love coupon! A special treat, just for you.","I love finding new ways to make you happy."],
+  ["🎁","Christmas Magic",
+   "Santa might have made a little extra stop this year.",
+   "A little Christmas magic is on its way. ❤️"],
 
- ["❤️","A Little More Love","One more love coupon to add to your collection. Save it for a special moment!","My love for you has no expiry date."],
+  ["🎁","Another Little Wish",
+   "You already know the rules… but I think you'll like this one.",
+   "I love finding new ways to make you happy."],
 
- ["🧩","A Little Preparation","A little something to keep all the pieces together once you complete tomorrow's puzzle!","A little patience... tomorrow brings a puzzle surprise." ],
+  ["🎁","A Little More Love",
+   "A little reminder that you can always ask for something special.",
+   "My love for you has no expiry date."],
 
- ["🖤","A Villainous Surprise","Time to unleash your dark side! Your Disney Villains puzzle is here. Let's put it together!","The perfect excuse for some quality time together."],
+  ["🎁","Keeping Things Together",
+   "Some things are more satisfying when they stay exactly where they belong.",
+   "A little patience... tomorrow brings something exciting."],
 
- ["🌸","A Beautiful Scent","A little something special to make you smell even more amazing. Enjoy your Lattafa Eclaire!","You are my favourite fragrance in every room."],
+  ["🎁","A Villainous Surprise",
+   "Be careful… the characters in today's story aren't exactly innocent.",
+   "The perfect excuse for some quality time together."],
 
- ["❤️","Love Coupon No. 4","You know the drill! Another little coupon, redeemable whenever you want.","You deserve to feel loved every single day."],
+  ["🎁","Sweetness in Disguise",
+   "Sweetness can come in many forms. Some even linger long after you leave the room.",
+   "You are my favourite fragrance in every room."],
 
- ["💌","Words From My Heart","A handwritten letter, just for you. Take a moment to read it and remember how much you mean to me.","Some feelings are too special to fit into a gift box."],
+  ["🎁","Love, Once Again",
+   "I think you know by now that I have a soft spot for making you happy.",
+   "You deserve to feel loved every single day."],
 
- ["❤️","One More Little Surprise","Another love coupon! I hope you enjoy collecting these little moments.","I would choose you over and over again."],
+  ["🎁","Words From My Heart",
+   "No wrapping paper needed for this one. Just a little time and an open heart.",
+   "Some feelings are too special to fit into a gift box."],
 
- ["🧦","Cosy Christmas","Something cosy to keep you warm this winter. Enjoy your new socks!","I hope you always feel warm, safe and loved with me."],
+  ["🎁","Your Little Permission Slip",
+   "Consider this another little permission slip to spoil yourself.",
+   "I would choose you over and over again."],
 
- ["❤️","A Little Extra Love","A little coupon for another special moment together.","More love, more laughter and more memories."],
+  ["🎁","Winter Comfort",
+   "Winter is much nicer when you're prepared for it.",
+   "I hope you always feel warm, safe and loved with me."],
 
- ["💎","A Little Elegance","A beautiful little earring to add to your collection!","You deserve all the beautiful things in this world."],
+  ["🎁","One More Little Wish",
+   "Some wishes are simply too good to have just once.",
+   "More love, more laughter and more memories."],
 
- ["🎁","The Final Christmas Surprise","Your final Christmas gift will be delivered and waiting for you under the magic Christmas tree. 🎄","Merry Christmas, my love. You are the greatest gift I could ever ask for. ❤️"]
+  ["🎁","A Wild Surprise",
+   "Today's surprise has a little bit of personality… and perhaps some stripes.",
+   "A little something special for someone special."],
+
+  ["🎁","The Final Chapter",
+   "The last chapter of our little Christmas countdown. Your biggest surprise is waiting.",
+   "Merry Christmas, my love. You are the greatest gift I could ever ask for. ❤️"]
+
 ];
-const icons=["🎄","❄️","⭐","🎁","🦌","🍬","🧦","🔔","🕯️","🍭","🌟","🎀","☃️","🍪","❤️","✨","🧤","🍫","🎅","🌲","💝","🥰","🥂","🎄"];
-const opened = new Set(JSON.parse(localStorage.getItem("christmasOpened")||"[]"));
-let activeDay=0;
-const calendar=document.getElementById("calendar");
+
+
+/* =====================================
+   2. SIX LOVE COUPONS
+===================================== */
+
+const coupons = {
+
+  3: {
+    title: "Coffee Date",
+    description:
+      "One coffee date, completely planned by me. You just have to show up and enjoy."
+  },
+
+  13: {
+    title: "No Phones",
+    description:
+      "An evening just for us. No scrolling, no distractions, just quality time together."
+  },
+
+  14: {
+    title: "Chef's Choice",
+    description:
+      "I'll cook your favourite meal, and you don't have to lift a finger."
+  },
+
+  18: {
+    title: "Arcade Battle",
+    description:
+      "A gaming date! Winner gets bragging rights, loser owes the winner a treat."
+  },
+
+  20: {
+    title: "Mystery Road Trip",
+    description:
+      "Pick a day, pack a little bag and let me take you somewhere special. Destination stays a secret!"
+  },
+
+  22: {
+    title: "Baking Date",
+    description:
+      "A baking session together. We'll make something delicious, make a mess and enjoy every minute."
+  }
+
+};
+
+
+/* =====================================
+   3. CALENDAR SETTINGS
+===================================== */
+
+const icons = [
+  "🎄","❄️","⭐","🎁","🦌","🍬",
+  "🧦","🔔","🕯️","🍭","🌟","🎀",
+  "☃️","🍪","❤️","✨","🧤","🍫",
+  "🎅","🌲","💝","🥰","🥂","🎄"
+];
 
 const PREVIEW_MODE = false;
 
-function getToday(){
- if(PREVIEW_MODE) return 24;
- const now=new Date();
- // Use the visitor's local calendar date.
- if(now.getMonth()!==11 || now.getDate()<1 || now.getDate()>24) return 0;
- return now.getDate();
+let opened = new Set();
+
+try {
+  const saved = JSON.parse(
+    localStorage.getItem("christmasOpened") || "[]"
+  );
+
+  if (Array.isArray(saved)) {
+    opened = new Set(
+      saved.filter(
+        day => Number.isInteger(day) && day >= 1 && day <= 24
+      )
+    );
+  }
+} catch (error) {
+  opened = new Set();
 }
-function render(){
- calendar.innerHTML="";
- const today=getToday();
- surprises.forEach((item,i)=>{
-  const day=i+1, isOpen=opened.has(day);
-  const canOpen = PREVIEW_MODE ? true : (day===today);
-  const b=document.createElement("button");
-  b.className="door"+(isOpen?" opened":"")+(canOpen?"":" locked");
-  b.disabled=!canOpen;
-  b.innerHTML=`<span class="num">DAY ${String(day).padStart(2,"0")}</span><span class="symbol">${isOpen?item[0]:(canOpen?icons[i]:"🔒")}</span><span class="hint">${isOpen?"Revisit":(canOpen?"Open today's gift":"Come back on day "+day)}</span>`;
-  b.setAttribute("aria-label",`Day ${day}${canOpen?", open today's surprise":", locked until December "+day}`);
-  if(canOpen) b.addEventListener("click",()=>openDay(day));
-  calendar.appendChild(b);
- });
- document.getElementById("progressText").textContent=`${opened.size} of 24 moments discovered`;
- document.getElementById("bar").style.width=(opened.size/24*100)+"%";
+
+let activeDay = 0;
+
+const calendar = document.getElementById("calendar");
+
+
+/* =====================================
+   4. DATE CONTROL
+===================================== */
+
+function getToday() {
+
+  if (PREVIEW_MODE) return 24;
+
+  const now = new Date();
+
+  if (
+    now.getMonth() !== 11 ||
+    now.getDate() < 1 ||
+    now.getDate() > 24
+  ) {
+    return 0;
+  }
+
+  return now.getDate();
 }
-function openDay(day){
- activeDay=day;const item=surprises[day-1];
- document.getElementById("dayLabel").textContent=`December ${day} · Your little surprise`;
- document.getElementById("modalIcon").textContent=item[0];
- document.getElementById("modalTitle").textContent=item[1];
- document.getElementById("modalText").textContent=item[2];
- document.getElementById("modalNote").textContent=item[3];
- document.getElementById("modal").classList.add("show");
+
+
+/* =====================================
+   5. RENDER CALENDAR
+===================================== */
+
+function render() {
+
+  calendar.innerHTML = "";
+
+  const today = getToday();
+
+  surprises.forEach((item, i) => {
+
+    const day = i + 1;
+    const isOpen = opened.has(day);
+
+    const canOpen =
+      PREVIEW_MODE ||
+      day === today ||
+      isOpen;
+
+    const b = document.createElement("button");
+
+    b.className =
+      "door" +
+      (isOpen ? " opened" : "") +
+      (canOpen ? "" : " locked");
+
+    b.disabled = !canOpen;
+
+    b.innerHTML = `
+      <span class="num">
+        DAY ${String(day).padStart(2, "0")}
+      </span>
+
+      <span class="symbol">
+        ${isOpen ? item[0] : (canOpen ? icons[i] : "🔒")}
+      </span>
+
+      <span class="hint">
+        ${isOpen
+          ? "Revisit"
+          : (canOpen ? "Open today's gift" : "Come back on day " + day)}
+      </span>
+    `;
+
+    b.setAttribute(
+      "aria-label",
+      `Day ${day}${canOpen
+        ? ", open surprise"
+        : ", locked until December " + day}`
+    );
+
+    if (canOpen) {
+      b.addEventListener("click", () => openDay(day));
+    }
+
+    calendar.appendChild(b);
+
+  });
+
+  document.getElementById("progressText").textContent =
+    `${opened.size} of 24 moments discovered`;
+
+  document.getElementById("bar").style.width =
+    (opened.size / 24 * 100) + "%";
+
 }
-function close(){document.getElementById("modal").classList.remove("show")}
-document.getElementById("close").addEventListener("click",close);
-document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")close()});
-document.getElementById("markDone").addEventListener("click",()=>{
- if(!PREVIEW_MODE && activeDay!==getToday()) { close(); return; }
- opened.add(activeDay);
- localStorage.setItem("christmasOpened",JSON.stringify([...opened]));
- render();close()
-});
-document.getElementById("reset").addEventListener("click",()=>{if(confirm("Start the advent calendar again? This will clear the opened days on this device.")){opened.clear();localStorage.removeItem("christmasOpened");render()}});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+
+
+/* =====================================
+   6. OPEN SURPRISE OR COUPON
+===================================== */
+
+function openDay(day) {
+
+  activeDay = day;
+
+  const item = surprises[day - 1];
+  const coupon = coupons[day];
+
+  const modalIcon = document.getElementById("modalIcon");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const modalNote = document.getElementById("modalNote");
+  const couponView = document.getElementById("couponView");
+  const markDone = document.getElementById("markDone");
+
+  document.getElementById("dayLabel").textContent =
+    `December ${day} · Your little surprise`;
+
+  // Show normal surprise or coupon
+
+  modalIcon.style.display = coupon ? "none" : "";
+  modalTitle.style.display = coupon ? "none" : "";
+  modalText.style.display = coupon ? "none" : "";
+  modalNote.style.display = coupon ? "none" : "";
+
+  couponView.hidden = !coupon;
+
+  if (coupon) {
+
+    document.getElementById("couponTitle").textContent =
+      coupon.title;
+
+    document.getElementById("couponDescription").textContent =
+      coupon.description;
+
+    markDone.textContent = "Keep this coupon";
+
+  } else {
+
+    modalIcon.textContent = item[0];
+    modalTitle.textContent = item[1];
+    modalText.textContent = item[2];
+    modalNote.textContent = item[3];
+
+    markDone.textContent = "Keep this moment";
+
+  }
+
+  document.getElementById("modal").classList.add("show");
+
+}
+
+
+/* =====================================
+   7. DOWNLOAD LOVE COUPON AS PNG
+===================================== */
+
+document.getElementById("downloadCoupon").addEventListener(
+  "click",
+  () => {
+
+    const coupon = coupons[activeDay];
+
+    if (!coupon) return;
+
+    const canvas = document.createElement("canvas");
+
+    canvas.width = 1200;
+    canvas.height = 700;
+
+    const ctx = canvas.getContext("2d");
+
+    // Background
+
+    ctx.fillStyle = "#fff8e9";
+    ctx.fillRect(0, 0, 1200, 700);
+
+    // Burgundy ticket
+
+    ctx.fillStyle = "#790f12";
+    ctx.fillRect(80, 100, 1040, 500);
+
+    // Outer border
+
+    ctx.strokeStyle = "#e5cba5";
+    ctx.lineWidth = 3;
+    ctx.strokeRect(115, 135, 970, 430);
+
+    // Perforated ticket edges
+
+    ctx.fillStyle = "#fff8e9";
+
+    [80, 1120].forEach(x => {
+
+      ctx.beginPath();
+      ctx.arc(x, 350, 30, 0, Math.PI * 2);
+      ctx.fill();
+
+    });
+
+    // Vertical side labels
+
+    ctx.save();
+
+    ctx.fillStyle = "#f5e5d5";
+    ctx.font = "26px Georgia";
+    ctx.textAlign = "center";
+
+    ctx.translate(155, 350);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText("love coupon", 0, 0);
+
+    ctx.restore();
+
+    ctx.save();
+
+    ctx.fillStyle = "#f5e5d5";
+    ctx.font = "26px Georgia";
+    ctx.textAlign = "center";
+
+    ctx.translate(1045, 350);
+    ctx.rotate(Math.PI / 2);
+    ctx.fillText("love coupon", 0, 0);
+
+    ctx.restore();
+
+    // Decorative stars
+
+    ctx.fillStyle = "#f5e5d5";
+    ctx.font = "38px Georgia";
+
+    ctx.fillText("✦", 205, 205);
+    ctx.fillText("✦", 995, 205);
+    ctx.fillText("✦", 205, 525);
+    ctx.fillText("✦", 995, 525);
+
+    // Coupon title
+
+    ctx.fillStyle = "#fff8e9";
+    ctx.textAlign = "center";
+    ctx.font = "bold 62px Arial";
+
+    const words = coupon.title.toUpperCase().split(" ");
+    const lines = [];
+
+    let line = "";
+
+    words.forEach(word => {
+
+      const test = line ? line + " " + word : word;
+
+      if (ctx.measureText(test).width > 700 && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = test;
+      }
+
+    });
+
+    if (line) lines.push(line);
+
+    const startY = 295 - ((lines.length - 1) * 38);
+
+    lines.forEach((text, i) => {
+
+      ctx.fillText(
+        text,
+        600,
+        startY + i * 76
+      );
+
+    });
+
+    // Coupon description
+
+    ctx.font = "25px Arial";
+    ctx.fillStyle = "#f5e5d5";
+
+    const descriptionWords = coupon.description.split(" ");
+    const descriptionLines = [];
+
+    let descriptionLine = "";
+
+    descriptionWords.forEach(word => {
+
+      const test = descriptionLine
+        ? descriptionLine + " " + word
+        : word;
+
+      if (ctx.measureText(test).width > 680 && descriptionLine) {
+        descriptionLines.push(descriptionLine);
+        descriptionLine = word;
+      } else {
+        descriptionLine = test;
+      }
+
+    });
+
+    if (descriptionLine) {
+      descriptionLines.push(descriptionLine);
+    }
+
+    const descriptionStart =
+      390 - ((descriptionLines.length - 1) * 17);
+
+    descriptionLines.forEach((text, i) => {
+
+      ctx.fillText(
+        text,
+        600,
+        descriptionStart + i * 35
+      );
+
+    });
+
+    // Heart
+
+    ctx.font = "48px Georgia";
+    ctx.fillStyle = "#fff8e9";
+    ctx.fillText("♡", 600, 520);
+
+    // Footer
+
+    ctx.font = "21px Arial";
+    ctx.fillStyle = "#e5cba5";
+
+    ctx.fillText(
+      "VALID FOR ONE SPECIAL MOMENT",
+      600,
+      655
+    );
+
+    // Download
+
+    const link = document.createElement("a");
+
+    link.download = `Love-Coupon-${activeDay}.png`;
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+
+  }
+);
+
+
+/* =====================================
+   8. CLOSE MODAL
+===================================== */
+
+function close() {
+
+  document.getElementById("modal").classList.remove("show");
+
+}
+
+document.getElementById("close").addEventListener(
+  "click",
+  close
+);
+
+document.getElementById("modal").addEventListener(
+  "click",
+  e => {
+    if (e.target.id === "modal") close();
+  }
+);
+
+
+/* =====================================
+   9. MARK SURPRISE AS DISCOVERED
+===================================== */
+
+document.getElementById("markDone").addEventListener(
+  "click",
+  () => {
+
+    if (!PREVIEW_MODE && activeDay !== getToday()) {
+      close();
+      return;
+    }
+
+    opened.add(activeDay);
+
+    localStorage.setItem(
+      "christmasOpened",
+      JSON.stringify([...opened])
+    );
+
+    render();
+    close();
+
+  }
+);
+
+
+/* =====================================
+   10. RESET CALENDAR
+===================================== */
+
+document.getElementById("reset").addEventListener(
+  "click",
+  () => {
+
+    if (
+      confirm(
+        "Start the advent calendar again? This will clear the opened days on this device."
+      )
+    ) {
+
+      opened.clear();
+
+      localStorage.removeItem("christmasOpened");
+
+      render();
+
+    }
+
+  }
+);
+
+
+/* =====================================
+   11. KEYBOARD SUPPORT
+===================================== */
+
+document.addEventListener(
+  "keydown",
+  e => {
+    if (e.key === "Escape") close();
+  }
+);
+
+
+/* =====================================
+   12. INITIALISE CALENDAR
+===================================== */
+
 render();
+
 </script>
+
 </body>
 </html>
