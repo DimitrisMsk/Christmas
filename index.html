@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -692,7 +691,6 @@ const surprises = [
 
 ];
 
-
 /* =====================================
    2. SIX LOVE COUPONS
 ===================================== */
@@ -700,39 +698,39 @@ const surprises = [
 const coupons = {
 
   3: {
-    title: "Coffee Date",
+    title: "Movie Night",
     description:
-      "One coffee date, completely planned by me. You just have to show up and enjoy."
+      "You choose the movie, I'll prepare the snacks, and we'll spend the evening cuddled up together. No phones, just us. ❤️"
   },
 
   13: {
-    title: "No Phones",
+    title: "Mysterious Road Trip",
     description:
-      "An evening just for us. No scrolling, no distractions, just quality time together."
+      "Pick a day, get ready and hop in the car. I'll take you somewhere special. The destination is a secret until we get there! ❤️"
   },
 
   14: {
-    title: "Chef's Choice",
+    title: "Game Night",
     description:
-      "I'll cook your favourite meal, and you don't have to lift a finger."
+      "An evening full of games, laughs and a little friendly competition. Winner gets to choose a special prize!"
   },
 
   18: {
-    title: "Arcade Battle",
+    title: "Restaurant Date",
     description:
-      "A gaming date! Winner gets bragging rights, loser owes the winner a treat."
+      "A dinner date at a restaurant of your choice. My treat! Dress up, enjoy some good food and let me spoil you. ❤️"
   },
 
   20: {
-    title: "Mystery Road Trip",
+    title: "Your Wish",
     description:
-      "Pick a day, pack a little bag and let me take you somewhere special. Destination stays a secret!"
+      ""
   },
 
   22: {
-    title: "Baking Date",
+    title: "Your Choice",
     description:
-      "A baking session together. We'll make something delicious, make a mess and enjoy every minute."
+      ""
   }
 
 };
@@ -1084,6 +1082,20 @@ document.getElementById("downloadCoupon").addEventListener(
 
     });
 
+   // Blank coupon writing lines
+    if (!coupon.description) {
+
+      ctx.strokeStyle = "#e5cba5";
+      ctx.lineWidth = 2;
+
+      [370, 420, 470].forEach(y => {
+        ctx.beginPath();
+        ctx.moveTo(300, y);
+        ctx.lineTo(900, y);
+        ctx.stroke();
+      });
+
+}
     // Heart
 
     ctx.font = "48px Georgia";
